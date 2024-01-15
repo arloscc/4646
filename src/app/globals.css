@@ -1,27 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.cor{
+  font-family: var(--font-cor);
 }
+:root {font-size: calc(16 * 100vw / 1366);}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+animation: transitionIn 0.75s;
 }
